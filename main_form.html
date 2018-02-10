@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> ΥΠΟΛΟΓΙΣΜΟΣ ΠΟΣΟΥ ΕΠΙΔΟΤΗΣΗΣ ΤΟΥ ΠΡΟΓΡΑΜΜΑΤΟΣ ΕΞΟΙΚΟΝΟΜΩ ΚΑΤ'ΟΙΚΟΝ ΙΙ </title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </link>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+  </head>
+  <body>
+    <br/>
+    <div class="container">
+      <div class="panel panel-primary" style="width:750px;margin:0px auto">
+        <div class="panel-heading">ΥΠΟΛΟΓΙΣΜΟΣ ΠΟΣΟΥ ΕΠΙΔΟΤΗΣΗΣ ΤΟΥ ΠΡΟΓΡΑΜΜΑΤΟΣ ΕΞΟΙΚΟΝΟΜΩ ΚΑΤ'ΟΙΚΟΝ ΙΙ</div>
+        <div class="panel-body">
+          <form data-toggle="validator" role="form" method="post" action="/cgi-bin/exoikonomo.py">
+            <div class="form-group">
+              <label for="inputEmail" class="control-label">Email</label>
+              <input type="email" pattern=".*@\w{2,}\.\w{2,}" class="form-control" name="email" id="inputEmail" placeholder="Email" required="" />
+              <div class="help-block with-errors">&nbsp;</div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="typos_eisod">Τύπος εισοδήματος</label>
+              <select id="typos_eisod" class="form-control" placeholder="Τύπος εισοδήματος" required="" name="typos_eisod">
+                <option value="Ατομικό">Ατομικό</option>
+                <option value="Οικογενειακό">Οικογενειακό</option>
+              </select>
+              <div class="help-block with-errors">&nbsp;</div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="eisod">Εισόδημα</label>
+              <input class="form-control" data-error="Παρακαλώ δώστε το εισόδημά σας." name="eisod" id="eisod" placeholder="Εισόδημα" type="number" step="1" required="" min="0" />
+              <div class="help-block with-errors">&nbsp;</div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="paidia">Αριθμός παιδιών</label>
+              <input class="form-control" data-error="Παρακαλώ δώστε αριθμό παιδιών." name="paidia" id="paidia" placeholder="Αριθμός παιδιών" type="number" step="1" required="" min="0" />
+              <div class="help-block with-errors">&nbsp;</div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="embado">Επιφάνεια Διαμερίσματος</label>
+              <input class="form-control" data-error="Παρακαλώ δώστε επιφάνεια διαμερίσματος." name="emvado" id="emvado" placeholder="Επιφάνεια Διαμερίσματος" type="number" required="" min="0" />
+              <div class="help-block with-errors">&nbsp;</div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="inputName">Επιλέξτε Νομό</label>
+              <select id="topo" class="form-control" placeholder="Επιλέξτε Νομό" required="" name="topo">
+                <option value="Αττική">Αττική</option>
+                <option value="Θεσσαλονίκη">Θεσσαλονίκη</option>
+                <option value="Λάρισα">Λάρισα</option>
+                <option value="Ηράκλειο">Ηράκλειο</option>
+                <option value="Αχαΐα">Αχαΐα</option>
+                <option value="Αιτωλοακαρνανία">Αιτωλοακαρνανία</option>
+                <option value="Αργολίδα">Αργολίδα</option>
+                <option value="Αρκαδία">Αρκαδία</option>
+                <option value="Αρτα">Αρτα</option>
+                <option value="Βοιωτία">Βοιωτία</option>
+                <option value="Γρεβενά">Γρεβενά</option>
+                <option value="Δράμα">Δράμα</option>
+                <option value="Δωδεκάνησα">Δωδεκάνησα</option>
+                <option value="Έβρος">Έβρος</option>
+                <option value="Ευρυτανία">Ευρυτανία</option>
+                <option value="Εύβοια">Εύβοια</option>
+                <option value="Ζακύνθος">Ζακύνθος</option>
+                <option value="Ηλεία">Ηλεία</option>
+                <option value="Ημαθία">Ημαθία</option>
+                <option value="Θεσπρωτία">Θεσπρωτία</option>
+                <option value="Ιωαννίνα">Ιωαννίνα</option>
+                <option value="Κέρκυρα">Κέρκυρα</option>
+                <option value="Καβάλα">Καβάλα</option>
+                <option value="Καρδίτσα">Καρδίτσα</option>
+                <option value="Καστοριά">Καστοριά</option>
+                <option value="Κεφαλλονιά">Κεφαλλονιά</option>
+                <option value="Κιλκίς">Κιλκίς</option>
+                <option value="Κοζάνη">Κοζάνη</option>
+                <option value="Κορινθία">Κορινθία</option>
+                <option value="Κυκλάδες">Κυκλάδες</option>
+                <option value="Λέσβος">Λέσβος</option>
+                <option value="Λακωνία">Λακωνία</option>
+                <option value="Λασίθι">Λασίθι</option>
+                <option value="Λευκάδα">Λευκάδα</option>
+                <option value="Μαγνησία">Μαγνησία</option>
+                <option value="Μεσσηνία">Μεσσηνία</option>
+                <option value="Ξάνθη">Ξάνθη</option>
+                <option value="Πέλλα">Πέλλα</option>
+                <option value="Πιερία">Πιερία</option>
+                <option value="Πρέβεζα">Πρέβεζα</option>
+                <option value="Ρεθύμνο">Ρεθύμνο</option>
+                <option value="Ροδόπη">Ροδόπη</option>
+                <option value="Σάμος">Σάμος</option>
+                <option value="Σέρρες">Σέρρες</option>
+                <option value="Τρίκαλα">Τρίκαλα</option>
+                <option value="Φθιώτιδα">Φθιώτιδα</option>
+                <option value="Φλώρινα">Φλώρινα</option>
+                <option value="Φωκίδα">Φωκίδα</option>
+                <option value="Χίος">Χίος</option>
+                <option value="Χαλκιδική">Χαλκιδική</option>
+                <option value="Χανιά">Χανιά</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit"> Submit </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
